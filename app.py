@@ -226,20 +226,29 @@ with tab3:
             st.warning("Please select different currencies.")
         else:
             try:
-                # Fetch live rates (using verify=False to bypass local SSL issues)
-                url = f"https://api.exchangerate-api.com/v4/latest/{from_code}"
-                response = requests.get(url, verify=False, timeout=5)
-                data = response.json()
+                # Fetch live rates using Yahoo Finance
+                url = f"https://query1.finance.yahoo.com/v8/finance/chart/{from_code}{to_code}=X"
+                headers = {'User-Agent': 'Mozilla/5.0'}
+                response = requests.get(url, headers=headers, verify=False, timeout=5)
+                meta = response.json()['chart']['result'][0]['meta']
                 
-                rate = data['rates'][to_code]
+                rate = meta['regularMarketPrice']
+                prev_rate = meta.get('previousClose') or meta.get('chartPreviousClose') or rate
+                
                 converted_amount = amount * rate
                 
-                res_html = f"""
-<div class="result-box">
-{converted_amount:,.2f} {to_code}
-<div class="result-sub">Live Rate: 1 {from_code} = {rate} {to_code}</div>
+                diff = rate - prev_rate
+                symbol = "📈" if diff >= 0 else "📉"
+                color = "#38ef7d" if diff >= 0 else "#ff416c"
+                sign = "+" if diff >= 0 else ""
+                
+                res_html = f"""<div class="result-box">
+<div style="font-size: 32px; font-weight: bold;">{converted_amount:,.2f} {to_code}</div>
+<div style="font-size: 16px; color:{color}; margin-top: 5px; font-weight: bold;">
+{symbol} {sign}{diff:,.4f} {to_code} (vs Yesterday)
 </div>
-                """
+<div class="result-sub" style="margin-top: 15px;">Live Rate: 1 {from_code} = {rate:,.4f} {to_code}</div>
+</div>"""
                 st.markdown(res_html, unsafe_allow_html=True)
             except Exception as e:
                 st.error(f"Error fetching live rates. Please check your internet connection.")
@@ -706,7 +715,7 @@ with st.expander("ℹ️ About All-in-One Online Calculator"):
     *✅ No Ads | ✅ No Login | ✅ 100% Free*
     
     <div style='font-size: 10px; color: transparent; margin-top: 15px; line-height: 1.2;'>
-    <b>Search Tags:</b> SIP calculator, EMI calculator, Mutual fund SIP calculator, Home loan EMI calculator, Car loan EMI calculator, FD calculator, Fixed deposit interest calculator, Compound interest calculator, Interest rate calculator, Personal loan EMI calculator, Live gold price today, 24k gold price live, 22k gold price today, Silver price live, Currency converter, USD to INR live, Live exchange rate, Dollar to Rupee converter, Real-time currency exchange, Gold rate calculator, GST calculator, Online GST calculator, Discount calculator, Percentage calculator, Tax calculator India, Find percentage of a number, Calculate discount percentage, Shopping discount calculator, Reverse GST calculator, Price after GST, Online calculator, Scientific calculator online, Free online calculator, All in one calculator, Best online calculator, Math calculator, Basic calculator, Multi-purpose calculator, Web calculator, BMI calculator, Body mass index calculator, Age calculator, Exact age calculator, Age calculator by date of birth, Date of birth calculator, Ideal weight calculator, Health calculator, Age difference calculator, Calculate age in days.
+    <b>Search Tags:</b> SIP calculator, EMI calculator, Mutual fund SIP calculator, Home loan EMI calculator, Car loan EMI calculator, FD calculator, Fixed deposit interest calculator, Compound interest calculator, Interest rate calculator, Personal loan EMI calculator, Live gold price today, 24k gold price live, 22k gold price today, Silver price live, Currency converter, USD to INR live, Live exchange rate, Dollar to Rupee converter, Real-time currency exchange, Gold rate calculator, GST calculator, Online GST calculator, Discount calculator, Percentage calculator, Tax calculator India, Find percentage of a number, Calculate discount percentage, Shopping discount calculator, Reverse GST calculator, Price after GST, Online calculator, Scientific calculator online, Free online calculator, All in one calculator, Best online calculator, Math calculator, Basic calculator, Multi-purpose calculator, Web calculator, BMI calculator, Body mass index calculator, Age calculator, Exact age calculator, Age calculator by date of birth, Date of birth calculator, Ideal weight calculator, Health calculator, Age difference calculator, Calculate age in days, Live currency converter, Live USD to INR, Live Gold and Silver calculator, Today live gold rate, Real-time currency rates live, Live EMI checking, Live online calculator, Free live tools, Indian market live rates, Live dollar price, Live exchange rates.
     </div>
     """, unsafe_allow_html=True)
     st.markdown("<div style='text-align: center; color: #888; font-size:14px; margin-top:10px;'>Made with ❤️ for everyday use.</div>", unsafe_allow_html=True)
