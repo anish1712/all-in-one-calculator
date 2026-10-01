@@ -12,25 +12,14 @@ st.set_page_config(page_title="All-in-One Online Calculator - EMI, SIP, BMI, Age
 # --- Custom Premium CSS ---
 st.markdown("""
 <style>
-    .stApp { background-color: #f0f2f6 !important; }
-    .stMarkdown p, .stMarkdown div, .stMarkdown label, .stMarkdown span { color: #333333 !important; }
-    div[data-baseweb="input"] input, div[data-baseweb="select"] div { color: #1a1a1a !important; }
-    /* Premium Animated Background */
-    .stApp {
-        background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-    }
-    
-    /* Main Title Styling with 3D text */
+    /* Dark & Light Mode Auto Support */
     h1 {
         text-align: center;
-        color: #1a1a1a !important;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 900;
         letter-spacing: 2px;
-        text-shadow: 3px 3px 6px rgba(0,0,0,0.2), -1px -1px 1px rgba(255,255,255,0.8);
         margin-bottom: 5px;
     }
-    
     /* Hide Streamlit Header & Footer */
     #MainMenu {visibility: hidden;}
     header {visibility: hidden;}
@@ -111,7 +100,7 @@ st.markdown("""
 
 # --- Header ---
 st.title("📊 All-in-One Online Calculator")
-st.markdown("<p style='text-align: center; color: #555; font-size: 16px; font-weight: 500;'>11+ Powerful Tools: Basic & Scientific, EMI, SIP, Live Gold, Currency, GST & more — Everything in one place!</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; opacity: 0.8; font-size: 16px; font-weight: 500;'>11+ Powerful Tools: Basic & Scientific, EMI, SIP, Live Gold, Currency, GST & more — Everything in one place!</p>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 
 # --- Tabs ---
@@ -143,7 +132,7 @@ with tab1:
         "Kotak Mahindra": 8.75
     }
     
-    st.markdown("<p style='font-size:14px; color:#555;'>💡 Select a bank to auto-fill current Home Loan rates, or enter your own custom rate.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:14px; opacity:0.8;'>💡 Select a bank to auto-fill current Home Loan rates, or enter your own custom rate.</p>", unsafe_allow_html=True)
     selected_bank = st.selectbox("Select Bank (Optional):", list(bank_rates.keys()))
     
     col1, col2 = st.columns(2)
@@ -204,7 +193,7 @@ with tab2:
 # ==========================================
 with tab3:
     st.subheader("💱 Live Currency Converter")
-    st.markdown("<p style='font-size:14px; color:#555;'>💡 This tool fetches real-time exchange rates from the internet.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:14px; opacity:0.8;'>💡 This tool fetches real-time exchange rates from the internet.</p>", unsafe_allow_html=True)
     
     currencies = ["USD - US Dollar", "EUR - Euro", "GBP - British Pound", "AED - UAE Dirham", "CAD - Canadian Dollar", "AUD - Australian Dollar", "INR - Indian Rupee"]
     
@@ -283,9 +272,6 @@ with tab5:
     st.subheader("🧮 Basic Calculator")
     basic_calc_html = """
     <style>
-    .stApp { background-color: #f0f2f6 !important; }
-    .stMarkdown p, .stMarkdown div, .stMarkdown label, .stMarkdown span { color: #333333 !important; }
-    div[data-baseweb="input"] input, div[data-baseweb="select"] div { color: #1a1a1a !important; }
     * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body { background: transparent; margin:0; display:flex; justify-content:center; }
     .calc-container { width: 100%; max-width: 350px; background: rgba(255, 255, 255, 0.9); border-radius: 20px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #ddd; }
@@ -345,9 +331,6 @@ with tab6:
     st.subheader("🧪 Scientific Calculator")
     sci_calc_html = """
     <style>
-    .stApp { background-color: #f0f2f6 !important; }
-    .stMarkdown p, .stMarkdown div, .stMarkdown label, .stMarkdown span { color: #333333 !important; }
-    div[data-baseweb="input"] input, div[data-baseweb="select"] div { color: #1a1a1a !important; }
     * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body { background: transparent; margin:0; display:flex; justify-content:center; }
     .calc-container { width: 100%; max-width: 400px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #ddd; }
@@ -437,7 +420,7 @@ with tab6:
 # ==========================================
 with tab8:
     st.subheader("🥇 Live Gold & Silver Prices")
-    st.markdown("<p style='font-size:14px; color:#555;'>💡 Fetches 100% Free Live Global Market Prices. Indian retail market price (with 6% import duty & 3% GST) is approx 9% higher.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:14px; opacity:0.8;'>💡 Fetches 100% Free Live Global Market Prices. Indian retail market price (with 6% import duty & 3% GST) is approx 9% higher.</p>", unsafe_allow_html=True)
     
     if st.button("Fetch Live Rates 🥇", use_container_width=True):
         try:
@@ -498,7 +481,7 @@ with tab7:
     st.markdown("---")
     
     if extra_tool == "🧾 GST (Tax) Calculator":
-        st.markdown("<p style='font-size:14px; color:#555; margin-top:-15px;'>💡 Tip: Examples are provided next to the rates to help you choose.</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-size:14px; opacity:0.8; margin-top:-15px;'>💡 Tip: Examples are provided next to the rates to help you choose.</p>", unsafe_allow_html=True)
         
         gst_rates_info = {
             "5% (Spices, Sugar, Tea, Footwear < ₹500)": 5,
@@ -679,3 +662,5 @@ with st.expander("ℹ️ About All-in-One Online Calculator"):
     </div>
     """)
     st.markdown("<div style='text-align: center; color: #888; font-size:14px; margin-top:10px;'>Made with ❤️ for everyday use.</div>", unsafe_allow_html=True)
+
+
