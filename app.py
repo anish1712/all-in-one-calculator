@@ -284,6 +284,9 @@ with tab5:
         .calc-container { background: rgba(30, 30, 30, 0.95); border: 1px solid #444; }
         .display { background: #222; color: #fff !important; }
         .btn { background: #3d3d3d; color: #fff; }
+        .btn.btn-op { background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); color: white; }
+        .btn.btn-sci { background: #475569; color: #f8fafc; }
+        .btn.btn-eq { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; }
       }
       </style>
     <div class="calc-container">
@@ -348,6 +351,9 @@ with tab6:
         .calc-container { background: rgba(30, 30, 30, 0.95); border: 1px solid #444; }
         .display { background: #222; color: #fff !important; }
         .btn { background: #3d3d3d; color: #fff; }
+        .btn.btn-op { background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); color: white; }
+        .btn.btn-sci { background: #475569; color: #f8fafc; }
+        .btn.btn-eq { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; }
       }
       </style>
     <div class="calc-container">
@@ -670,6 +676,7 @@ with st.expander("ℹ️ About All-in-One Online Calculator"):
     </div>
     """)
     st.markdown("<div style='text-align: center; color: #888; font-size:14px; margin-top:10px;'>Made with ❤️ for everyday use.</div>", unsafe_allow_html=True)
+
 
 
 
