@@ -279,8 +279,13 @@ with tab5:
     .btn-row { display: flex; justify-content: space-between; margin-bottom: 12px; }
     .btn { width: 23%; height: 60px; font-size: 24px; border: none; border-radius: 12px; cursor: pointer; background: #e0e5ec; color: #333; transition: 0.2s; font-weight: bold; }
     .btn:active { transform: scale(0.92); }
-    .btn-op { background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); color: white; }
-    </style>
+    
+      @media (prefers-color-scheme: dark) {
+        .calc-container { background: rgba(30, 30, 30, 0.95); border: 1px solid #444; }
+        .display { background: #222; color: #fff !important; }
+        .btn { background: #3d3d3d; color: #fff; }
+      }
+      </style>
     <div class="calc-container">
         <input type="text" class="display" id="res" disabled value="0">
         <div class="btn-row">
@@ -338,10 +343,13 @@ with tab6:
     .btn-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
     .btn { flex: 1; margin: 0 4px; height: 55px; font-size: 18px; border: none; border-radius: 10px; cursor: pointer; background: #e0e5ec; color: #333; transition: 0.2s; font-weight: 600; }
     .btn:active { transform: scale(0.92); }
-    .btn-op { background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); color: white; font-size: 22px; }
-    .btn-sci { background: #cbd5e1; color: #1e293b; font-size: 16px; }
-    .btn-eq { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; font-size: 24px; }
-    </style>
+    
+      @media (prefers-color-scheme: dark) {
+        .calc-container { background: rgba(30, 30, 30, 0.95); border: 1px solid #444; }
+        .display { background: #222; color: #fff !important; }
+        .btn { background: #3d3d3d; color: #fff; }
+      }
+      </style>
     <div class="calc-container">
         <input type="text" class="display" id="res" disabled value="0">
         
@@ -662,5 +670,6 @@ with st.expander("ℹ️ About All-in-One Online Calculator"):
     </div>
     """)
     st.markdown("<div style='text-align: center; color: #888; font-size:14px; margin-top:10px;'>Made with ❤️ for everyday use.</div>", unsafe_allow_html=True)
+
 
 
