@@ -167,10 +167,10 @@ with tab1:
         total_interest = total_payment - principal
         
         res_html = f"""
-        <div class="result-box">
-            Monthly EMI: ₹{int(emi):,}
-            <div class="result-sub">Total Interest: ₹{int(total_interest):,} | Total Payment: ₹{int(total_payment):,}</div>
-        </div>
+<div class="result-box">
+Monthly EMI: ₹{int(emi):,}
+<div class="result-sub">Total Interest: ₹{int(total_interest):,} | Total Payment: ₹{int(total_payment):,}</div>
+</div>
         """
         st.markdown(res_html, unsafe_allow_html=True)
 
@@ -194,10 +194,10 @@ with tab2:
         wealth_gained = future_value - total_invested
         
         res_html = f"""
-        <div class="result-box">
-            Future Wealth: ₹{int(future_value):,}
-            <div class="result-sub">Amount Invested: ₹{int(total_invested):,} | Wealth Gained: ₹{int(wealth_gained):,}</div>
-        </div>
+<div class="result-box">
+Future Wealth: ₹{int(future_value):,}
+<div class="result-sub">Amount Invested: ₹{int(total_invested):,} | Wealth Gained: ₹{int(wealth_gained):,}</div>
+</div>
         """
         st.markdown(res_html, unsafe_allow_html=True)
 
@@ -235,10 +235,10 @@ with tab3:
                 converted_amount = amount * rate
                 
                 res_html = f"""
-                <div class="result-box">
-                    {converted_amount:,.2f} {to_code}
-                    <div class="result-sub">Live Rate: 1 {from_code} = {rate} {to_code}</div>
-                </div>
+<div class="result-box">
+{converted_amount:,.2f} {to_code}
+<div class="result-sub">Live Rate: 1 {from_code} = {rate} {to_code}</div>
+</div>
                 """
                 st.markdown(res_html, unsafe_allow_html=True)
             except Exception as e:
@@ -271,10 +271,10 @@ with tab4:
         total_months = (years * 12) + months
         
         res_html = f"""
-        <div class="result-box">
-            Age: {years} Years, {months} Months, {days} Days
-            <div class="result-sub">Total Months: {total_months} | Total Days: {total_days:,}</div>
-        </div>
+<div class="result-box">
+Age: {years} Years, {months} Months, {days} Days
+<div class="result-sub">Total Months: {total_months} | Total Days: {total_days:,}</div>
+</div>
         """
         st.markdown(res_html, unsafe_allow_html=True)
 
@@ -487,28 +487,26 @@ with tab8:
             silver_1kg_tax = silver_1kg_base * 1.09
             
             res_html = f"""<div class="result-box">
-    <h4 style="color:#fff; margin-bottom:5px;">🥇 Gold (10 Grams)</h4>
-    <div style="font-size: 20px; color:#ddd; margin-bottom: 5px;">Global Base Rate (24K): ₹{int(gold_10g_base):,}</div>
-    <div style="font-size: 16px; color:{gold_color}; margin-bottom: 15px; font-weight: bold;">
-        {gold_symbol} {gold_sign}₹{int(gold_diff):,} (vs Yesterday)
-    </div>
-    
-    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 15px;">
-        <b style="color: #ffd700;">24K (99.9% Purity):</b> ₹{int(gold_10g_24k):,} <br>
-        <b style="color: #e6c200;">22K (91.6% Purity):</b> ₹{int(gold_10g_22k):,} <br>
-        <b style="color: #ccac00;">18K (75.0% Purity):</b> ₹{int(gold_10g_18k):,}
-    </div>
-    <hr style="opacity: 0.2; margin: 15px 0;">
-    <h4 style="color:#fff; margin-bottom:5px;">🥈 Silver (1 KG)</h4>
-    <div style="font-size: 20px; color:#ddd; margin-bottom: 5px;">Global Base Rate: ₹{int(silver_1kg_base):,}</div>
-    <div style="font-size: 16px; color:{silver_color}; margin-bottom: 15px; font-weight: bold;">
-        {silver_symbol} {silver_sign}₹{int(silver_diff):,} (vs Yesterday)
-    </div>
-    
-    <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 15px;">
-        <b>Indian Retail Market:</b> ₹{int(silver_1kg_tax):,}
-    </div>
-    <div class="result-sub">Prices include approx 9% duty/GST | 1 USD = ₹{usd_inr:.2f}</div>
+<h4 style="color:#fff; margin-bottom:5px;">🥇 Gold (10 Grams)</h4>
+<div style="font-size: 20px; color:#ddd; margin-bottom: 5px;">Global Base Rate (24K): ₹{int(gold_10g_base):,}</div>
+<div style="font-size: 16px; color:{gold_color}; margin-bottom: 15px; font-weight: bold;">
+{gold_symbol} {gold_sign}₹{int(gold_diff):,} (vs Yesterday)
+</div>
+<div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 15px;">
+<b style="color: #ffd700;">24K (99.9% Purity):</b> ₹{int(gold_10g_24k):,} <br>
+<b style="color: #e6c200;">22K (91.6% Purity):</b> ₹{int(gold_10g_22k):,} <br>
+<b style="color: #ccac00;">18K (75.0% Purity):</b> ₹{int(gold_10g_18k):,}
+</div>
+<hr style="opacity: 0.2; margin: 15px 0;">
+<h4 style="color:#fff; margin-bottom:5px;">🥈 Silver (1 KG)</h4>
+<div style="font-size: 20px; color:#ddd; margin-bottom: 5px;">Global Base Rate: ₹{int(silver_1kg_base):,}</div>
+<div style="font-size: 16px; color:{silver_color}; margin-bottom: 15px; font-weight: bold;">
+{silver_symbol} {silver_sign}₹{int(silver_diff):,} (vs Yesterday)
+</div>
+<div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 15px;">
+<b>Indian Retail Market:</b> ₹{int(silver_1kg_tax):,}
+</div>
+<div class="result-sub">Prices include approx 9% duty/GST | 1 USD = ₹{usd_inr:.2f}</div>
 </div>"""
             st.markdown(res_html, unsafe_allow_html=True)
         except Exception as e:
@@ -555,19 +553,19 @@ with tab7:
                 gst_amount = base_amount * (gst_rate / 100)
                 total_amount = base_amount + gst_amount
                 res_html = f"""
-                <div class="result-box">
-                    Total Amount (with GST): ₹{total_amount:,.2f}
-                    <div class="result-sub">Base: ₹{base_amount:,.2f} | GST: ₹{gst_amount:,.2f}</div>
-                </div>
+<div class="result-box">
+Total Amount (with GST): ₹{total_amount:,.2f}
+<div class="result-sub">Base: ₹{base_amount:,.2f} | GST: ₹{gst_amount:,.2f}</div>
+</div>
                 """
             else:
                 gst_amount = base_amount - (base_amount * (100 / (100 + gst_rate)))
                 original_price = base_amount - gst_amount
                 res_html = f"""
-                <div class="result-box">
-                    Original Price (without GST): ₹{original_price:,.2f}
-                    <div class="result-sub">Total: ₹{base_amount:,.2f} | GST: ₹{gst_amount:,.2f}</div>
-                </div>
+<div class="result-box">
+Original Price (without GST): ₹{original_price:,.2f}
+<div class="result-sub">Total: ₹{base_amount:,.2f} | GST: ₹{gst_amount:,.2f}</div>
+</div>
                 """
             st.markdown(res_html, unsafe_allow_html=True)
             
@@ -583,10 +581,10 @@ with tab7:
             final_price = mrp - saved_amount
             
             res_html = f"""
-            <div class="result-box">
-                Price After Discount: ₹{final_price:,.2f}
-                <div class="result-sub">You Save: ₹{saved_amount:,.2f}</div>
-            </div>
+<div class="result-box">
+Price After Discount: ₹{final_price:,.2f}
+<div class="result-sub">You Save: ₹{saved_amount:,.2f}</div>
+</div>
             """
             st.markdown(res_html, unsafe_allow_html=True)
             
@@ -606,10 +604,10 @@ with tab7:
             fd_interest = maturity_amount - fd_principal
             
             res_html = f"""
-            <div class="result-box">
-                Maturity Amount: ₹{int(maturity_amount):,}
-                <div class="result-sub">Total Deposit: ₹{int(fd_principal):,} | Interest Earned: ₹{int(fd_interest):,}</div>
-            </div>
+<div class="result-box">
+Maturity Amount: ₹{int(maturity_amount):,}
+<div class="result-sub">Total Deposit: ₹{int(fd_principal):,} | Interest Earned: ₹{int(fd_interest):,}</div>
+</div>
             """
             st.markdown(res_html, unsafe_allow_html=True)
             
@@ -655,10 +653,10 @@ with tab7:
             earned_interest = ci_amount - ci_principal
             
             res_html = f"""
-            <div class="result-box">
-                Total Future Value: ₹{int(ci_amount):,}
-                <div class="result-sub">Principal: ₹{int(ci_principal):,} | Interest Earned: ₹{int(earned_interest):,}</div>
-            </div>
+<div class="result-box">
+Total Future Value: ₹{int(ci_amount):,}
+<div class="result-sub">Principal: ₹{int(ci_principal):,} | Interest Earned: ₹{int(earned_interest):,}</div>
+</div>
             """
             st.markdown(res_html, unsafe_allow_html=True)
             
@@ -683,10 +681,10 @@ with tab7:
                 category = "Obese ❌"
                 
             res_html = f"""
-            <div class="result-box">
-                Your BMI: {bmi:.1f}
-                <div class="result-sub">Status: {category}</div>
-            </div>
+<div class="result-box">
+Your BMI: {bmi:.1f}
+<div class="result-sub">Status: {category}</div>
+</div>
             """
             st.markdown(res_html, unsafe_allow_html=True)
 
