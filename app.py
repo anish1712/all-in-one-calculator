@@ -684,10 +684,10 @@ with st.expander("ℹ️ About All-in-One Online Calculator"):
     ---
     *✅ No Ads | ✅ No Login | ✅ 100% Free*
     
-    <div style='font-size: 10px; color: #aaa; margin-top: 15px; line-height: 1.2;'>
+    <div style='font-size: 10px; color: transparent; margin-top: 15px; line-height: 1.2;'>
     <b>Search Tags:</b> SIP calculator, EMI calculator, Mutual fund SIP calculator, Home loan EMI calculator, Car loan EMI calculator, FD calculator, Fixed deposit interest calculator, Compound interest calculator, Interest rate calculator, Personal loan EMI calculator, Live gold price today, 24k gold price live, 22k gold price today, Silver price live, Currency converter, USD to INR live, Live exchange rate, Dollar to Rupee converter, Real-time currency exchange, Gold rate calculator, GST calculator, Online GST calculator, Discount calculator, Percentage calculator, Tax calculator India, Find percentage of a number, Calculate discount percentage, Shopping discount calculator, Reverse GST calculator, Price after GST, Online calculator, Scientific calculator online, Free online calculator, All in one calculator, Best online calculator, Math calculator, Basic calculator, Multi-purpose calculator, Web calculator, BMI calculator, Body mass index calculator, Age calculator, Exact age calculator, Age calculator by date of birth, Date of birth calculator, Ideal weight calculator, Health calculator, Age difference calculator, Calculate age in days.
     </div>
-    """)
+    """, unsafe_allow_html=True)
     st.markdown("<div style='text-align: center; color: #888; font-size:14px; margin-top:10px;'>Made with ❤️ for everyday use.</div>", unsafe_allow_html=True)
 
 
