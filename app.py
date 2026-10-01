@@ -12,6 +12,9 @@ st.set_page_config(page_title="All-in-One Online Calculator - EMI, SIP, BMI, Age
 # --- Custom Premium CSS ---
 st.markdown("""
 <style>
+    .stApp { background-color: #f0f2f6 !important; }
+    .stMarkdown p, .stMarkdown div, .stMarkdown label, .stMarkdown span { color: #333333 !important; }
+    div[data-baseweb="input"] input, div[data-baseweb="select"] div { color: #1a1a1a !important; }
     /* Premium Animated Background */
     .stApp {
         background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
@@ -20,7 +23,7 @@ st.markdown("""
     /* Main Title Styling with 3D text */
     h1 {
         text-align: center;
-        color: #1a1a1a;
+        color: #1a1a1a !important;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 900;
         letter-spacing: 2px;
@@ -101,6 +104,7 @@ st.markdown("""
         font-size: 17px !important;
         font-weight: bold !important;
         background: transparent !important;
+        color: #555555 !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -279,10 +283,13 @@ with tab5:
     st.subheader("🧮 Basic Calculator")
     basic_calc_html = """
     <style>
+    .stApp { background-color: #f0f2f6 !important; }
+    .stMarkdown p, .stMarkdown div, .stMarkdown label, .stMarkdown span { color: #333333 !important; }
+    div[data-baseweb="input"] input, div[data-baseweb="select"] div { color: #1a1a1a !important; }
     * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body { background: transparent; margin:0; display:flex; justify-content:center; }
     .calc-container { width: 100%; max-width: 350px; background: rgba(255, 255, 255, 0.9); border-radius: 20px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #ddd; }
-    .display { width: 100%; height: 70px; font-size: 36px; text-align: right; border: none; background: #f3f4f6; border-radius: 12px; padding: 10px 15px; margin-bottom: 20px; color: #1a1a1a; }
+    .display { width: 100%; height: 70px; font-size: 36px; text-align: right; border: none; background: #f3f4f6; border-radius: 12px; padding: 10px 15px; margin-bottom: 20px; color: #1a1a1a !important; }
     .btn-row { display: flex; justify-content: space-between; margin-bottom: 12px; }
     .btn { width: 23%; height: 60px; font-size: 24px; border: none; border-radius: 12px; cursor: pointer; background: #e0e5ec; color: #333; transition: 0.2s; font-weight: bold; }
     .btn:active { transform: scale(0.92); }
@@ -338,10 +345,13 @@ with tab6:
     st.subheader("🧪 Scientific Calculator")
     sci_calc_html = """
     <style>
+    .stApp { background-color: #f0f2f6 !important; }
+    .stMarkdown p, .stMarkdown div, .stMarkdown label, .stMarkdown span { color: #333333 !important; }
+    div[data-baseweb="input"] input, div[data-baseweb="select"] div { color: #1a1a1a !important; }
     * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body { background: transparent; margin:0; display:flex; justify-content:center; }
     .calc-container { width: 100%; max-width: 400px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #ddd; }
-    .display { width: 100%; height: 70px; font-size: 28px; text-align: right; border: none; background: #f3f4f6; border-radius: 12px; padding: 10px 15px; margin-bottom: 20px; color: #1a1a1a; letter-spacing: 1px; }
+    .display { width: 100%; height: 70px; font-size: 28px; text-align: right; border: none; background: #f3f4f6; border-radius: 12px; padding: 10px 15px; margin-bottom: 20px; color: #1a1a1a !important; letter-spacing: 1px; }
     .btn-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
     .btn { flex: 1; margin: 0 4px; height: 55px; font-size: 18px; border: none; border-radius: 10px; cursor: pointer; background: #e0e5ec; color: #333; transition: 0.2s; font-weight: 600; }
     .btn:active { transform: scale(0.92); }
