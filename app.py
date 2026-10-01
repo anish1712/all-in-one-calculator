@@ -7,6 +7,19 @@ import requests
 # --- Page Config ---
 st.set_page_config(page_title="All-in-One Online Calculator - EMI, SIP, BMI, Age", page_icon="📊", layout="centered")
 
+# --- Google Site Verification ---
+components.html(
+    """
+    <script>
+        var meta = parent.document.createElement('meta');
+        meta.name = 'google-site-verification';
+        meta.content = 'Zsnc747ycqc3-15XQUD4q38lvkdMYsfIFqLIyRRGQnU';
+        parent.document.getElementsByTagName('head')[0].appendChild(meta);
+    </script>
+    """,
+    height=0, width=0
+)
+
 
 
 # --- Custom Premium CSS ---
